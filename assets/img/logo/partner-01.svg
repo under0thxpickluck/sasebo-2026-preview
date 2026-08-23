@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" width="360" height="120" role="img" aria-label="PARTNER 01">
+  <rect width="360" height="120" fill="#FFFFFF"/>
+  <g fill="none" stroke="#101820" stroke-width="2" opacity="0.85">
+    <circle cx="62" cy="60" r="29"/><path d="M36 60 L88 60"/>
+  </g>
+  <text x="110" y="67" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700" letter-spacing="1.6" fill="#101820">PARTNER 01</text>
+</svg>
