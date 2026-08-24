@@ -18,6 +18,22 @@
       return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c];
     });
   }
+  /* 未確定の値を画面に出すときの形。
+
+     data.js の ★ は「ここはまだ決まっていない」という
+     編集者向けの目印で、公開する文字ではない。実際に
+     ★info@example.jp が全ページのフッターに出ていた。
+     「未定」と「偽の連絡先が出ている」は別物で、
+     後者は届かない問い合わせを生む。
+
+     空のときも ★ が残っているときも「調整中」にする。
+     data.js を直し忘れても、印がそのまま出ることはない。 */
+  var TBD = "調整中";
+  function pub(v) {
+    var t = (v == null ? "" : String(v)).trim();
+    return (!t || t.charAt(0) === "★") ? TBD : t;
+  }
+
   function ease(t) { return 1 - Math.pow(1 - t, 3); }
 
   /* ============================================================
@@ -360,8 +376,8 @@
       "js-sample-notice": s.sampleNotice, "js-use-of-funds": (D.funding || {}).useOfFunds
     };
     Object.keys(map).forEach(function (k) {
-      if (map[k] == null) return;
-      $$("." + k).forEach(function (el) { el.textContent = map[k]; });
+      var v = pub(map[k]);
+      $$("." + k).forEach(function (el) { el.textContent = v; });
     });
     $$(".js-map-link").forEach(function (a) { a.href = e.mapUrl; });
     if (!e.dateConfirmed) {
@@ -635,7 +651,7 @@
       var host = $(id);
       if (!host || !rows) return;
       host.innerHTML = rows.map(function (r) {
-        return "<dt>" + esc(r.label) + "</dt><dd>" + esc(r.text) + "</dd>";
+        return "<dt>" + esc(r.label) + "</dt><dd>" + esc(pub(r.text)) + "</dd>";
       }).join("");
     }
     fill("#accessTransit", a.transit);
@@ -701,7 +717,7 @@
       var host = $(id);
       if (!host || !rows) return;
       host.innerHTML = rows.map(function (r) {
-        return "<dt>" + esc(r[k1]) + "</dt><dd>" + esc(r[k2]) + "</dd>";
+        return "<dt>" + esc(r[k1]) + "</dt><dd>" + esc(pub(r[k2])) + "</dd>";
       }).join("");
     }
     fill("#committee", D.committee, "role", "name");

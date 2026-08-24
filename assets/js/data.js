@@ -6,6 +6,12 @@
    将来 API(26章) / 管理画面(23章) に接続する際もそのまま移行できます。
 
    ★ が付いた項目は未確定です。決定後に必ず更新してください。
+
+   ★ はコメントにだけ書き、値には入れないこと。
+   値に入れるとそのまま画面に出る（実際に
+   ★info@example.jp が全ページのフッターに出ていた）。
+   未確定の項目は空文字列 "" にする。
+   空のとき site.js が「調整中」と出す。
    ============================================================ */
 
 window.SCM = {
@@ -18,8 +24,8 @@ window.SCM = {
     tagline: "佐世保の冬に、あかりを。",
     genres: ["CHRISTMAS MARKET", "FOOD & MARCHE", "ILLUMINATION"],
     venueEn: "at SASEBO KEIRIN",
-    contactEmail: "★info@example.jp",          // ★お問い合わせ先
-    organizer: "★実行委員会名を記入",           // ★主催
+    contactEmail: "",                          // ★お問い合わせ先
+    organizer: "",                             // ★主催（実行委員会名）
     sampleNotice: "写真はイメージです。出店者および協賛の一覧は、準備中のサンプルを表示しています。"
   },
 
@@ -41,7 +47,7 @@ window.SCM = {
     openLabel: "11:00 - 20:30",
     fireworksTime: "20:00",           // ★花火打ち上げ時刻
     venue: "佐世保競輪場",
-    venueAddress: "★長崎県佐世保市（正式住所を記入）",
+    venueAddress: "",                 // ★会場の正式住所
     mapUrl: "https://www.google.com/maps/search/?api=1&query=%E4%BD%90%E4%B8%96%E4%BF%9D%E7%AB%B6%E8%BC%AA%E5%A0%B4",
     admission: "入場無料"
   },
@@ -167,7 +173,7 @@ window.SCM = {
 
   /* -------- 企業協賛枠（仕様書 8.3） --------
      sponsors: その枠が決まった企業・団体名。空配列のあいだは表に「募集中」と表示します。
-               決定したら ["★★株式会社"] のように社名を追加してください。 */
+               決定したら ["○○株式会社"] のように社名を追加してください。 */
   sponsorTiers: [
     { tier:"MAIN",     price:1000000, limit:"1社限定", items:["イベント名に社名を冠します","ロゴを最上位で掲出します","会場アナウンスでご紹介します","ブースを出展いただけます"], sponsors:[] },
     { tier:"PREMIUM",  price:500000,  limit:"",        items:["ロゴを大きく掲出します","ブースを出展いただけます","VIP席にご招待します"], sponsors:[] },
@@ -214,22 +220,22 @@ window.SCM = {
 
   /* -------- 主催・後援・協力 -------- */
   credits: [
-    { label: "主催",   value: "★実行委員会名" },
-    { label: "共催",   value: "★" },
-    { label: "後援",   value: "★" },
-    { label: "協力",   value: "★" },
-    { label: "会場協力", value: "★" }
+    { label: "主催",   value: "" },
+    { label: "共催",   value: "" },
+    { label: "後援",   value: "" },
+    { label: "協力",   value: "" },
+    { label: "会場協力", value: "" }
   ],
 
   /* -------- 実行委員会 -------- */
   committee: [
-    { role: "実行委員長", name: "★" },
-    { role: "副実行委員長", name: "★" },
-    { role: "事務局長", name: "★" },
-    { role: "会計", name: "★" },
-    { role: "出店担当", name: "★" },
-    { role: "協賛担当", name: "★" },
-    { role: "広報担当", name: "★" }
+    { role: "実行委員長", name: "" },
+    { role: "副実行委員長", name: "" },
+    { role: "事務局長", name: "" },
+    { role: "会計", name: "" },
+    { role: "出店担当", name: "" },
+    { role: "協賛担当", name: "" },
+    { role: "広報担当", name: "" }
   ],
 
   /* -------- 佐世保について（出典を明記して掲載） -------- */
@@ -273,7 +279,7 @@ window.SCM = {
       { label:"足元",   text:"会場内は一部未舗装です。歩きやすい靴でお越しください。" }
     ],
     car: [
-      { label:"駐車場", text:"★台数および場所は決定次第掲載します。" },
+      { label:"駐車場", text:"台数および場所は決定次第掲載します。" },
       { label:"ご退場", text:"花火終了後は周辺道路の混雑が予想されます。お時間に余裕をもってお帰りください。" }
     ]
   },
