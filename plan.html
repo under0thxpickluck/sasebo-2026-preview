@@ -30,7 +30,7 @@
       <span class="logo__en"><span>NIGHT</span><span>MARKET</span></span>
       <span class="logo__jp">ないとマーケット（仮称）</span>
     </a>
-    <nav class="nav" aria-label="メインナビゲーション"><a class="nav__link" data-page="about.html" href="about.html">ABOUT</a><a class="nav__link" data-page="plan.html" href="plan.html">PLAN</a><a class="nav__link" data-page="market.html" href="market.html">MARKET</a><a class="nav__link" data-page="fireworks.html" href="fireworks.html">FIREWORKS</a><a class="nav__link" data-page="ticket.html" href="ticket.html">TICKET</a><a class="nav__link" data-page="support.html" href="support.html">SUPPORT</a><a class="nav__link" data-page="access.html" href="access.html">ACCESS</a></nav>
+    <nav class="nav" aria-label="メインナビゲーション"><a class="nav__link" data-page="about.html" href="about.html">ABOUT</a><a class="nav__link" data-page="market.html" href="market.html">MARKET</a><a class="nav__link" data-page="fireworks.html" href="fireworks.html">FIREWORKS</a><a class="nav__link" data-page="ticket.html" href="ticket.html">TICKET</a><a class="nav__link" data-page="support.html" href="support.html">SUPPORT</a><a class="nav__link" data-page="access.html" href="access.html">ACCESS</a></nav>
     <a class="hd__cta" id="hdCta" href="support.html">
       <span class="hd__cta-sub">応援する</span>
       <span class="hd__cta-main">1,000円から受付中</span>
@@ -42,7 +42,7 @@
 
 <div class="drawer" id="drawer">
   <button type="button" class="drawer__close" aria-label="メニューを閉じる">&#215;</button>
-  <nav class="drawer__nav" aria-label="モバイルナビゲーション"><a class="drawer__link" href="about.html"><span>ABOUT</span>イベントについて</a><a class="drawer__link" href="plan.html"><span>PLAN</span>規模と試算</a><a class="drawer__link" href="market.html"><span>MARKET</span>出店者</a><a class="drawer__link" href="fireworks.html"><span>FIREWORKS</span>花火</a><a class="drawer__link" href="ticket.html"><span>TICKET</span>有料観覧席</a><a class="drawer__link" href="support.html"><span>SUPPORT</span>協賛・支援</a><a class="drawer__link" href="access.html"><span>ACCESS</span>アクセス</a><a class="drawer__link" href="partners.html"><span>PARTNERS</span>協賛企業・団体</a><a class="drawer__link" href="news.html"><span>NEWS</span>お知らせ</a><a class="drawer__link" href="faq.html"><span>FAQ</span>よくある質問</a></nav>
+  <nav class="drawer__nav" aria-label="モバイルナビゲーション"><a class="drawer__link" href="about.html"><span>ABOUT</span>イベントについて</a><a class="drawer__link" href="market.html"><span>MARKET</span>出店者</a><a class="drawer__link" href="fireworks.html"><span>FIREWORKS</span>花火</a><a class="drawer__link" href="ticket.html"><span>TICKET</span>有料観覧席</a><a class="drawer__link" href="support.html"><span>SUPPORT</span>協賛・支援</a><a class="drawer__link" href="access.html"><span>ACCESS</span>アクセス</a><a class="drawer__link" href="partners.html"><span>PARTNERS</span>協賛企業・団体</a><a class="drawer__link" href="news.html"><span>NEWS</span>お知らせ</a><a class="drawer__link" href="faq.html"><span>FAQ</span>よくある質問</a></nav>
   <div class="drawer__foot">
     <a class="btn btn--support btn--block" href="support.html">応援する</a>
     <a class="btn btn--secondary btn--block" href="ticket.html">有料観覧席</a>
@@ -61,6 +61,12 @@
 
       <!-- **ここを目立たせる。** 仮説を実績と読み違えられるのがいちばん困る。
            画面の上のほう、表より前に置く（下に置くと読まれない）。 -->
+      <!-- このページは案内（ナビ・フッター）から外してある。
+           協賛と出店の検討者に URL を渡して読んでもらう前提。 -->
+      <p class="plan-note" style="margin-top:1.2em">
+        このページは、協賛・出店をご検討の方にお渡ししているものです。
+        <a href="index.html">トップへ戻る</a>
+      </p>
       <p class="plan-status" id="planStatus"></p>
       <p class="plan-caution" id="planCaution" role="note"></p>
 
@@ -470,8 +476,7 @@
           <p class="ft__ttl">Event</p>
           <ul class="ft__list">
             <li><a href="about.html">イベントについて</a></li>
-            <li><a href="plan.html">規模と試算</a></li>
-            <li><a href="market.html">出店者</a></li>
+              <li><a href="market.html">出店者</a></li>
             <li><a href="fireworks.html">花火</a></li>
             <li><a href="access.html">アクセス</a></li>
           </ul>
