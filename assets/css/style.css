@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* ============================================================
-   SASEBO LIGHTS FESTIVAL 2026 — Design System
+   ないとマーケット（仮称） — Design System
    仕様書 2章(ブランド) / 18章(Motion) / 19章(Responsive) / 20章(A11y) 準拠
    ============================================================ */
 
@@ -868,3 +868,140 @@ table{border-collapse:collapse;width:100%}
 .section--ink .faq__q::before,.section--ink2 .faq__q::before{color:var(--gold)}
 .section--ink .faq__mark::before,.section--ink .faq__mark::after,
 .section--ink2 .faq__mark::before,.section--ink2 .faq__mark::after{background:var(--gold)}
+
+/* ---------- 22. 試算ページ（plan.html） ----------
+   数字を並べる場所。装飾より、**どれが仮説でどれが決まりかが分かること**を優先する。 */
+
+/* 仮説である断り。表より先に目に入る位置・強さにする */
+.plan-caution{
+  margin-top:1.4em;max-width:760px;
+  padding:14px 18px;border-left:3px solid var(--gold);
+  background:rgba(199,164,90,.08);
+  font-size:.95rem;line-height:1.9;color:var(--text);
+}
+
+.table-wrap{margin-top:1.8em;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.plan-table{width:100%;min-width:560px;border-collapse:collapse;font-size:.95rem}
+.plan-table th,.plan-table td{
+  padding:12px 14px;text-align:left;vertical-align:top;
+  border-bottom:1px solid var(--line-light);
+}
+.plan-table thead th{
+  font-size:.78rem;letter-spacing:.08em;color:var(--muted);
+  font-weight:700;white-space:nowrap;border-bottom-color:var(--text);
+}
+.plan-table tbody th{font-weight:700}
+/* 数字の列は詰めない。和文の説明列だけ折り返す */
+.plan-table td:not(:last-child){white-space:nowrap}
+.plan-table .is-strong th,.plan-table .is-strong td{
+  background:rgba(199,164,90,.10);font-weight:700;
+}
+
+.plan-total{margin-top:1.2em;font-size:1.05rem}
+.plan-total b{font-family:var(--num);font-size:1.5rem;letter-spacing:.01em}
+
+.plan-note{margin-top:1em;font-size:.9rem;line-height:1.9;color:var(--muted)}
+
+/* 削れるかの印。色だけに頼らず、文字そのもので区別がつくようにする */
+.plan-cut{display:inline-block;padding:2px 8px;border-radius:999px;
+  border:1px solid var(--line-light);font-size:.8rem;white-space:nowrap}
+.plan-cut--no{border-color:var(--red);color:var(--red);font-weight:700}
+.plan-cut--care{border-color:var(--gold);color:#8a6d2c}
+
+/* 概略図。地図ではないので、枠と注記で「図」だと分かるようにする */
+.plan-map{margin:2em 0 0;max-width:900px}
+.plan-map svg{width:100%;height:auto;display:block;border-radius:var(--r-card)}
+.map-sea{fill:#4E7F90;font-family:var(--jp);font-size:19px}
+.map-road{stroke:rgba(246,241,231,.42);stroke-width:3;fill:none;stroke-linecap:round}
+.map-road--thin{stroke-width:1.5;stroke-dasharray:6 7}
+.map-label{fill:var(--on-dark-mute);font-family:var(--jp);font-size:15px}
+.map-place{fill:var(--on-dark);font-family:var(--jp);font-size:17px}
+.map-dot{fill:var(--on-dark-mute)}
+.map-venue{fill:var(--gold)}
+.map-halo{fill:rgba(199,164,90,.16)}
+.map-venue-label{fill:var(--gold);font-family:var(--en);font-size:22px;letter-spacing:.06em}
+.map-north{fill:var(--on-dark-mute)}
+
+@media (max-width:640px){
+  .plan-table{min-width:520px}
+  .plan-total b{font-size:1.3rem}
+}
+
+/* ---------- 23. 導線・時間割・警備（plan.html） ----------
+   図は「順番と、人が溜まる場所」だけを描く。会場図ではないので、
+   縮尺も方位も持たせない。 */
+
+.plan-flowmap{margin:2em 0 0;max-width:980px}
+.plan-flowmap svg{width:100%;height:auto;display:block;border-radius:var(--r-card)}
+
+.fm-path{stroke:rgba(246,241,231,.38);stroke-width:3;fill:none;stroke-linecap:round}
+.fm-path--split{stroke-width:1.6;stroke-dasharray:7 8}
+.fm-dot{fill:#16242E;stroke:var(--gold);stroke-width:2}
+/* 溜まる場所だけ、印を強くする。全部を強くすると、どこも強くない */
+.fm-dot--peak{fill:rgba(199,164,90,.18);stroke-width:3}
+.fm-no{fill:var(--gold);font-family:var(--num);font-size:20px;letter-spacing:.04em}
+.fm-label{fill:var(--on-dark);font-family:var(--jp);font-size:17px}
+.fm-peak{fill:var(--gold);font-family:var(--jp);font-size:15px}
+.fm-exit{fill:var(--on-dark-mute);font-family:var(--jp);font-size:15px}
+
+/* 通り道の原則。表の下に置いて、表の読み方を縛る一文にする */
+.plan-rule{
+  margin-top:1.4em;max-width:760px;padding:12px 16px;
+  border:1px solid var(--line-light);border-radius:var(--r-card);
+  font-size:.95rem;line-height:1.9;
+}
+
+.plan-no{
+  display:inline-block;min-width:2.2em;
+  font-family:var(--num);font-size:.86em;color:var(--muted);letter-spacing:.06em;
+}
+
+/* 時刻の列。**数字を揃える。**揃っていないと、前後関係が読み取りにくい */
+.plan-time{font-family:var(--num);font-size:1.05em;letter-spacing:.02em;white-space:nowrap}
+.plan-table--time td:nth-child(2){color:var(--text)}
+.plan-table--time td:nth-child(3){color:var(--muted)}
+
+@media (max-width:640px){
+  .plan-table--time{min-width:560px}
+}
+
+/* 行の見出しは折らない。**狭い画面で「花/火の前」と割れる。**
+   表そのものは .table-wrap が横に送るので、折らなくても読める。 */
+.plan-table tbody th{white-space:nowrap}
+
+/* ---------- 24. 試算のラベル（2026-11-11） ----------
+   **色だけで分けない。** 白黒で印刷しても、読み上げでも区別がつくように、
+   文字そのものをラベルにする。 */
+
+.plan-status{
+  display:inline-block;margin-top:1.4em;padding:6px 14px;
+  border:1px solid var(--line);border-radius:999px;
+  font-size:.85rem;letter-spacing:.04em;color:var(--muted);
+}
+
+.plan-legend{
+  display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;
+  margin-top:1.2em;font-size:.85rem;color:var(--muted);
+}
+
+.plan-tag{
+  display:inline-block;padding:1px 7px;margin-right:2px;
+  border:1px solid var(--line-light);border-radius:3px;
+  font-size:.74rem;letter-spacing:.06em;white-space:nowrap;
+}
+.plan-tag--fact{border-color:#4E7F90;color:#3c6775}
+.plan-tag--goal{border-color:var(--gold);color:#8a6d2c}
+.plan-tag--none{border-color:var(--red);color:var(--red)}
+
+/* これから詰めること。**箇条書きのまま出す。**表にすると、
+   埋まっているように見えてしまう */
+.plan-todo{
+  margin:1.2em 0 0;padding-left:1.2em;max-width:760px;
+  font-size:.95rem;line-height:2;
+}
+.plan-todo li{margin-top:.4em}
+
+/* 列が増えた表。狭い画面では横に送る */
+@media (max-width:900px){
+  #planScenario{min-width:900px}
+}

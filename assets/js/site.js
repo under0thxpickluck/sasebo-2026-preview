@@ -1,5 +1,5 @@
 /* ============================================================
-   SASEBO LIGHTS FESTIVAL 2026 — site.js
+   ないとマーケット（仮称） — site.js
    仕様書 6章(カウントダウン) / 7章(支援メーター) / 11章(出店者)
    16章(FAQ) / 18章(Motion) / 20章(A11y) の挙動を実装
    ============================================================ */
@@ -116,7 +116,6 @@
     if (!root || !D.event) return;
 
     var target = new Date(D.event.targetISO).getTime();
-    if (isNaN(target)) return;
 
     var grid = $(".cd__grid", root);
     var msg = $(".cd__msg", root);
@@ -124,6 +123,14 @@
       { k: "d", label: "DAYS" }, { k: "h", label: "HOURS" },
       { k: "m", label: "MINUTES" }, { k: "s", label: "SECONDS" }
     ];
+
+    /* 日が決まるまで targetISO は空。黙って何も出さずに返すと、枠だけが
+       空いた箱が残って「壊れている」ように見える。**決まっていないことを
+       そのまま出す。** 日が入れば、ここは素通りして数え始める。 */
+    if (isNaN(target)) {
+      showMessage("開催日は調整中です");
+      return;
+    }
 
     if (D.event.fireworksStatus === "canceled") {
       showMessage("花火は中止となりました");
@@ -168,8 +175,8 @@
       var diff = target - now;
 
       if (diff <= -60 * 60 * 1000) { showMessage("ご来場ありがとうございました"); return true; }
-      if (diff <= 0) { showMessage("まもなく冬花火"); return false; }
-      if (diff <= 30 * 60 * 1000) { showMessage("まもなく冬花火"); return false; }
+      if (diff <= 0) { showMessage("まもなく花火"); return false; }
+      if (diff <= 30 * 60 * 1000) { showMessage("まもなく花火"); return false; }
       if (jstDay(now) === jstDay(target)) { showMessage("本日開催"); return false; }
 
       var s = Math.floor(diff / 1000);
@@ -186,7 +193,7 @@
   }
 
   /* ============================================================
-     4. 冬花火メーター（サイトのシグネチャ／仕様書7章）
+     4. 花火メーター（サイトのシグネチャ／仕様書7章）
         支援率のぶんだけ花火の光条が描かれる
      ============================================================ */
   var RAYS = 40;
@@ -266,6 +273,14 @@
     if (supEl) supEl.innerHTML = Number(f.supporterCount).toLocaleString("ja-JP") + "<em>名</em>";
     if (comEl) comEl.innerHTML = Number(f.companyCount).toLocaleString("ja-JP") + "<em>社</em>";
     if (updEl) updEl.textContent = f.updatedAt;
+
+    /* 見本であることの断り。**数字のすぐ下に出す。**
+       ページの下のほうに置くと、数字だけ読んで帰る人に届かない。 */
+    var sampleEl = document.getElementById("fundSample");
+    if (sampleEl && f.isSample && f.sampleLabel) {
+      sampleEl.textContent = f.sampleLabel;
+      sampleEl.hidden = false;
+    }
     if (restEl) {
       var rest = goal - current;
       restEl.innerHTML = rest > 0 ? yen(rest) : "達成";
@@ -275,7 +290,7 @@
       rail.setAttribute("aria-valuemin", "0");
       rail.setAttribute("aria-valuemax", "100");
       rail.setAttribute("aria-valuenow", String(Math.round(pct * 100)));
-      rail.setAttribute("aria-label", "冬花火の支援達成率");
+      rail.setAttribute("aria-label", "花火の支援達成率");
     }
     if (pct >= 1) root.classList.add("is-complete");
 

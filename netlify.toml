@@ -1,0 +1,87 @@
+# ============================================================
+# ないとマーケット（仮称）— Netlify（公開用リポジトリ）
+#
+# このリポジトリは **PUBLIC**。置いたものは誰でも取れる。
+# 本体（sasebo-2026）には提案書・改訂指示書・打ち合わせ記録が
+# 入っているので、そちらは配らない。ここはサイトだけ。
+#
+# 中身は本体の site/ から写す。**ここで直さない。**
+# 直すと次の写しで消える。直すのは本体の site/。
+#
+# 写さないもの:
+#   assets/img/photo/_backup_20261111/  クリスマス版の退避写真
+#   assets/video/hero.mp4               旧名のゲート看板が映っている
+# どちらも画面には出ないが、URL を直接叩けば取れてしまう。
+# ============================================================
+
+[build]
+  publish = "."
+  command = ""
+
+# ------------------------------------------------------------
+# まだ検索に載せない
+#
+# 名称が仮称、日程が調整中、花火が未確定、支援額は見本の数字。
+# 各ページの <meta name="robots" content="noindex"> と二重にしてある。
+# **公開の判断がつくまで外さない。**
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# 画像のファイル名に内容の指紋を入れていない（hero.jpg のような固定名）。
+# 長い max-age を付けると、差し替えても古い画像が居座る。
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=600, must-revalidate"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=600, must-revalidate"
+
+# ------------------------------------------------------------
+# 拡張子なしで来ても開ける。名刺やチラシに .html を書かずに済む。
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+[[redirects]]
+  from = "/plan"
+  to = "/plan.html"
+  status = 200
+[[redirects]]
+  from = "/market"
+  to = "/market.html"
+  status = 200
+[[redirects]]
+  from = "/fireworks"
+  to = "/fireworks.html"
+  status = 200
+[[redirects]]
+  from = "/ticket"
+  to = "/ticket.html"
+  status = 200
+[[redirects]]
+  from = "/support"
+  to = "/support.html"
+  status = 200
+[[redirects]]
+  from = "/access"
+  to = "/access.html"
+  status = 200
+[[redirects]]
+  from = "/partners"
+  to = "/partners.html"
+  status = 200
+[[redirects]]
+  from = "/news"
+  to = "/news.html"
+  status = 200
+[[redirects]]
+  from = "/faq"
+  to = "/faq.html"
+  status = 200

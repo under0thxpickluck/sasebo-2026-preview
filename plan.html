@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>事業の規模と試算｜ないとマーケット（仮称）</title>
+<meta name="description" content="来場者数、収入、支出、損益の見込みと、会場のおおよその位置。記載の数値はすべて仮説で、実績ではありません。">
+<meta name="robots" content="noindex"><!-- ★公開時に削除してください（仕様書21章） -->
+<!-- ★ canonical は正式ドメインが決まってから戻すこと。
+     example.jp のまま公開すると、検索側に別の URL を
+     正として伝えてしまう。<link rel="canonical" href="https://※/plan.html"> -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ないとマーケット（仮称）">
+<meta property="og:title" content="事業の規模と試算｜ないとマーケット（仮称）">
+<meta property="og:description" content="来場者数、収入、支出、損益の見込みと、会場のおおよその位置。記載の数値はすべて仮説で、実績ではありません。">
+<meta property="og:image" content="assets/img/photo/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+<div class="topbar" id="topbar">
+<div id="alert"></div>
+<header class="hd is-solid">
+  <div class="hd__in">
+    <a class="logo" href="index.html" aria-label="ないとマーケット（仮称） トップページ">
+      <span class="logo__en"><span>NIGHT</span><span>MARKET</span></span>
+      <span class="logo__jp">ないとマーケット（仮称）</span>
+    </a>
+    <nav class="nav" aria-label="メインナビゲーション"><a class="nav__link" data-page="about.html" href="about.html">ABOUT</a><a class="nav__link" data-page="plan.html" href="plan.html">PLAN</a><a class="nav__link" data-page="market.html" href="market.html">MARKET</a><a class="nav__link" data-page="fireworks.html" href="fireworks.html">FIREWORKS</a><a class="nav__link" data-page="ticket.html" href="ticket.html">TICKET</a><a class="nav__link" data-page="support.html" href="support.html">SUPPORT</a><a class="nav__link" data-page="access.html" href="access.html">ACCESS</a></nav>
+    <a class="hd__cta" id="hdCta" href="support.html">
+      <span class="hd__cta-sub">応援する</span>
+      <span class="hd__cta-main">1,000円から受付中</span>
+    </a>
+    <button type="button" class="burger" aria-expanded="false" aria-controls="drawer" aria-label="メニューを開く"><span></span></button>
+  </div>
+</header>
+</div>
+
+<div class="drawer" id="drawer">
+  <button type="button" class="drawer__close" aria-label="メニューを閉じる">&#215;</button>
+  <nav class="drawer__nav" aria-label="モバイルナビゲーション"><a class="drawer__link" href="about.html"><span>ABOUT</span>イベントについて</a><a class="drawer__link" href="plan.html"><span>PLAN</span>規模と試算</a><a class="drawer__link" href="market.html"><span>MARKET</span>出店者</a><a class="drawer__link" href="fireworks.html"><span>FIREWORKS</span>花火</a><a class="drawer__link" href="ticket.html"><span>TICKET</span>有料観覧席</a><a class="drawer__link" href="support.html"><span>SUPPORT</span>協賛・支援</a><a class="drawer__link" href="access.html"><span>ACCESS</span>アクセス</a><a class="drawer__link" href="partners.html"><span>PARTNERS</span>協賛企業・団体</a><a class="drawer__link" href="news.html"><span>NEWS</span>お知らせ</a><a class="drawer__link" href="faq.html"><span>FAQ</span>よくある質問</a></nav>
+  <div class="drawer__foot">
+    <a class="btn btn--support btn--block" href="support.html">応援する</a>
+    <a class="btn btn--secondary btn--block" href="ticket.html">有料観覧席</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">PLAN &amp; ESTIMATE</p>
+      <h1 class="h1">事業の規模と試算</h1>
+      <p class="lead wrap--narrow" style="margin-inline:0">
+        来場規模・支出・収入・運営体制についての事業計画です。本計画は企画段階のものであり、記載の数値は現状検討中です。
+      </p>
+
+      <!-- **ここを目立たせる。** 仮説を実績と読み違えられるのがいちばん困る。
+           画面の上のほう、表より前に置く（下に置くと読まれない）。 -->
+      <p class="plan-status" id="planStatus"></p>
+      <p class="plan-caution" id="planCaution" role="note"></p>
+
+      <!-- **ラベルの読み方を先に置く。** 色だけで分けると、白黒で印刷した
+           とき・読み上げたときに、目標と実績の区別が消える。 -->
+      <p class="plan-legend">
+        <span class="plan-tag plan-tag--fact">実績</span> 過去の実施報告に基づく数値
+        <span class="plan-tag plan-tag--draft">仮置</span> 見積前の予算枠
+        <span class="plan-tag plan-tag--goal">目標</span> 営業上の目標値
+        <span class="plan-tag plan-tag--none">検討中</span> 算定を進めている項目
+      </p>
+    </div>
+  </section>
+
+  <!-- ───────── 過去の実績 ───────── -->
+  <section class="section" id="history">
+    <div class="wrap">
+      <p class="eyebrow">HISTORY</p>
+      <h2 class="h2">過去の実施実績</h2>
+      <p class="lead wrap--narrow" style="margin-inline:0">
+        同じ運営体制で実施した過去イベントの来場実績です。
+      </p>
+      <div class="table-wrap">
+        <table class="plan-table" id="planHistory">
+          <thead><tr><th scope="col">回</th><th scope="col">来場</th><th scope="col">内訳</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="plan-note" id="planHistoryNote"></p>
+    </div>
+  </section>
+
+  <!-- ───────── 規模 ───────── -->
+  <section class="section section--alt" id="scale">
+    <div class="wrap">
+      <p class="eyebrow">SCALE</p>
+      <h2 class="h2">想定規模</h2>
+      <p class="lead wrap--narrow" style="margin-inline:0">
+        来場者数は下振れ・基準・上振れの3ケースで想定しています。基準ケースは延べ1,500人です。
+      </p>
+      <div class="table-wrap">
+        <table class="plan-table" id="planScale">
+          <thead><tr><th scope="col">項目</th><th scope="col">下振れ</th><th scope="col">基準</th><th scope="col">上振れ</th><th scope="col">考え方</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="plan-note" id="planScaleNote"></p>
+    </div>
+  </section>
+
+  <!-- ───────── 支出 ───────── -->
+  <section class="section" id="budget">
+    <div class="wrap">
+      <p class="eyebrow">COST</p>
+      <h2 class="h2">支出計画</h2>
+      <p class="lead wrap--narrow" style="margin-inline:0">
+        支出予算は10費目で構成し、各費目に削減の可否を併記しています。
+      </p>
+      <p class="plan-total">合計 <b id="planBudgetTotal">—</b></p>
+      <div class="table-wrap">
+        <table class="plan-table" id="planBudget">
+          <thead><tr><th scope="col">費目</th><th scope="col">予算</th><th scope="col">削減可否</th><th scope="col">備考</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="plan-note" id="planBudgetNote"></p>
+
+      <!-- **この表に入っていない費目がある。** 入っていないことを
+           書かないと、375万円が全部だと読まれる。 -->
+      <h3 class="h3" style="margin-top:2.4em">別途見積とする費目</h3>
+      <div class="table-wrap">
+        <table class="plan-table" id="planBudgetMissing">
+          <thead><tr><th scope="col">費目</th><th scope="col">状態</th><th scope="col">備考</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── 収入 ───────── -->
+  <section class="section section--alt" id="income">
+    <div class="wrap">
+      <p class="eyebrow">INCOME</p>
+      <h2 class="h2">収入計画（協賛を除く）</h2>
+      <p class="lead wrap--narrow" style="margin-inline:0">
+        出店料は売上の15%とし、開催後に精算します。開催前の収入はチケット類です。
+      </p>
+      <p class="plan-total">協賛を除く収入 <b id="planIncomeTotal">—</b></p>
+      <div class="table-wrap">
+        <table class="plan-table" id="planIncome">
+          <thead><tr><th scope="col">収入項目</th><th scope="col">数量・単価</th><th scope="col">見込み</th><th scope="col">入る時期</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="plan-note" id="planIncomeBase"></p>
+      <p class="plan-rule" id="planIncomeNote"></p>
+    </div>
+  </section>
+
+  <!-- ───────── 協賛 ───────── -->
+  <section class="section" id="sponsor">
+    <div class="wrap">
+      <p class="eyebrow">SPONSOR</p>
+      <h2 class="h2">協賛計画（営業目標）</h2>
+
+      <!-- **提案価格であって、入金実績ではない。** ここを混ぜると、
+           集まっていないお金を集まったことにしてしまう。 -->
+      <p class="plan-caution" id="planSponsorStatus" role="note"></p>
+
+      <p class="plan-total">目標 <b id="planSponsorTotal">—</b></p>
+      <div class="table-wrap">
+        <table class="plan-table" id="planSponsorMenu">
+          <thead><tr><th scope="col">区分</th><th scope="col">価格</th><th scope="col">目標社数</th><th scope="col">計</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="plan-note" id="planSponsorNote"></p>
+    </div>
+  </section>
+
+  <!-- ───────── 損益 ───────── -->
+  <section class="section" id="scenario">
+    <div class="wrap">
+      <p class="eyebrow">SCENARIO</p>
+      <h2 class="h2">収支シナリオ</h2>
+      <p class="lead wrap--narrow" style="margin-inline:0">
+        来場3ケース別の収支です。支出はいずれのケースも375万円で算定しています。
+      </p>
+      <div class="table-wrap">
+        <table class="plan-table" id="planScenario">
+          <thead><tr>
+            <th scope="col">ケース</th><th scope="col">来場</th><th scope="col">チケット</th>
+            <th scope="col">出店料</th><th scope="col">協賛を除く収入</th><th scope="col">協賛</th>
+            <th scope="col">差引</th><th scope="col">判断</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="plan-rule" id="planBreakeven"></p>
+      <p class="plan-note" id="planScenarioNote"></p>
+
+      <h3 class="h3" style="margin-top:2.4em">協賛額別の収支（基準ケース）</h3>
+      <div class="table-wrap">
+        <table class="plan-table" id="planSponsorLanding">
+          <thead><tr><th scope="col">協賛額</th><th scope="col">着地</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── GO / NO-GO ───────── -->
+  <section class="section" id="gonogo">
+    <div class="wrap">
+      <p class="eyebrow">GO / NO-GO</p>
+      <h2 class="h2">開催可否の判断基準</h2>
+      <p class="lead wrap--narrow" style="margin-inline:0">
+        開催日から逆算した各時点で、確認事項と判断基準を定めています。
+      </p>
+      <div class="table-wrap">
+        <table class="plan-table" id="planGonogo">
+          <thead><tr><th scope="col">時期</th><th scope="col">確かめること</th><th scope="col">判断基準</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="plan-rule" id="planGonogoNote"></p>
+    </div>
+  </section>
+
+  <!-- ───────── 分岐 ───────── -->
+  <section class="section section--alt" id="branch">
+    <div class="wrap">
+      <p class="eyebrow">BRANCH</p>
+      <h2 class="h2">実施形態</h2>
+      <p class="lead wrap--narrow" style="margin-inline:0">
+        花火の実施可否に応じて、3つの実施形態を想定しています。
+      </p>
+      <div class="table-wrap">
+        <table class="plan-table" id="planBranch">
+          <thead><tr><th scope="col">案</th><th scope="col">条件</th><th scope="col">備考</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── 導線 ───────── -->
+  <section class="section" id="flow">
+    <div class="wrap">
+      <p class="eyebrow">FLOW</p>
+      <h2 class="h2">来場者動線</h2>
+      <p class="lead wrap--narrow" style="margin-inline:0">
+        入場から退場までを5つの局面に分け、各局面の動線と留意点を整理しています。
+      </p>
+
+      <!-- **図であって、会場図ではない。** 配置が決まる前に縮尺のある図を出すと、
+           出店の位置の約束として読まれてしまう。順番と溜まる場所だけを描く。 -->
+      <figure class="plan-flowmap">
+        <svg viewBox="0 0 980 300" role="img" aria-labelledby="flowTitle flowDesc">
+          <title id="flowTitle">入場から退場までの順路</title>
+          <desc id="flowDesc">正門から入場し、マーケットの通路を周回、観覧エリアへ移動して花火を観覧したのち、複数の出口へ分散して退場するまでの流れを示した概念図です。</desc>
+
+          <rect x="0" y="0" width="980" height="300" fill="#0F1A22"/>
+
+          <!-- 道筋 -->
+          <path d="M96,150 L300,150 L520,150 L740,150" class="fm-path"/>
+          <path d="M740,150 L884,96" class="fm-path fm-path--split"/>
+          <path d="M740,150 L884,150" class="fm-path fm-path--split"/>
+          <path d="M740,150 L884,204" class="fm-path fm-path--split"/>
+
+          <!-- 節 -->
+          <g class="fm-node">
+            <circle cx="96" cy="150" r="26" class="fm-dot"/>
+            <text x="96" y="157" class="fm-no" text-anchor="middle">01</text>
+            <text x="96" y="212" class="fm-label" text-anchor="middle">入場</text>
+          </g>
+          <g class="fm-node">
+            <circle cx="300" cy="150" r="26" class="fm-dot"/>
+            <text x="300" y="157" class="fm-no" text-anchor="middle">02</text>
+            <text x="300" y="212" class="fm-label" text-anchor="middle">マーケット</text>
+          </g>
+          <g class="fm-node">
+            <circle cx="520" cy="150" r="30" class="fm-dot fm-dot--peak"/>
+            <text x="520" y="158" class="fm-no" text-anchor="middle">03</text>
+            <text x="520" y="216" class="fm-label" text-anchor="middle">観覧エリアへ</text>
+            <text x="520" y="92" class="fm-peak" text-anchor="middle">滞留が最大</text>
+          </g>
+          <g class="fm-node">
+            <circle cx="740" cy="150" r="26" class="fm-dot"/>
+            <text x="740" y="157" class="fm-no" text-anchor="middle">04</text>
+            <text x="740" y="212" class="fm-label" text-anchor="middle">花火</text>
+          </g>
+
+          <!-- 分散退場 -->
+          <text x="884" y="101" class="fm-exit">出口A</text>
+          <text x="884" y="155" class="fm-exit">出口B</text>
+          <text x="884" y="209" class="fm-exit">駐車場</text>
+          <text x="884" y="252" class="fm-label" text-anchor="middle">時間をずらして退場</text>
+        </svg>
+      </figure>
+
+      <div class="table-wrap">
+        <table class="plan-table" id="planFlow">
+          <thead><tr><th scope="col">局面</th><th scope="col">動線</th><th scope="col">留意点</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="plan-rule" id="planFlowRule"></p>
+    </div>
+  </section>
+
+  <!-- ───────── 時間割 ───────── -->
+  <section class="section section--alt" id="timetable">
+    <div class="wrap">
+      <p class="eyebrow">TIMETABLE</p>
+      <h2 class="h2">当日の進行（案）</h2>
+      <p class="lead wrap--narrow" style="margin-inline:0">
+        来場者向けの進行と、各時間帯の運営対応です。
+      </p>
+      <div class="table-wrap">
+        <table class="plan-table plan-table--time" id="planTimetable">
+          <thead><tr><th scope="col">時刻</th><th scope="col">来場者</th><th scope="col">運営</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="plan-note" id="planTimetableNote"></p>
+    </div>
+  </section>
+
+  <!-- ───────── 警備 ───────── -->
+  <section class="section" id="security">
+    <div class="wrap">
+      <p class="eyebrow">SECURITY</p>
+      <h2 class="h2">警備計画</h2>
+
+      <!-- **過去のイベントを参考にした見込みである**ことを、表より先に出す。
+           ここで確定した数字を出すと、所轄・警備会社と話す前に外へ約束したことになる。 -->
+      <p class="plan-caution" id="planSecurityBasis" role="note"></p>
+
+      <p class="lead wrap--narrow" style="margin-inline:0" id="planSecurityPeak"></p>
+
+      <h3 class="h3" style="margin-top:2.4em">重点警備箇所</h3>
+      <div class="table-wrap">
+        <table class="plan-table" id="planSecurity">
+          <thead><tr><th scope="col">場所</th><th scope="col">配置理由</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <h3 class="h3" style="margin-top:2.4em">関係機関との協議事項</h3>
+      <ul class="plan-todo" id="planSecurityTodo"></ul>
+    </div>
+  </section>
+
+  <!-- ───────── 追加企画 ───────── -->
+  <section class="section section--alt" id="marketing">
+    <div class="wrap">
+      <p class="eyebrow">EXTRA</p>
+      <h2 class="h2">追加企画</h2>
+      <p class="lead wrap--narrow" style="margin-inline:0">
+        既存の装飾費・広報費の範囲で実施する企画です。いずれも花火の実施可否にかかわらず実施できます。
+      </p>
+      <div class="table-wrap">
+        <table class="plan-table" id="planMarketing">
+          <thead><tr><th scope="col">企画</th><th scope="col">時間</th><th scope="col">費用</th><th scope="col">中身</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="plan-note" id="planMarketingNote"></p>
+    </div>
+  </section>
+
+  <!-- ───────── 場所 ───────── -->
+  <section class="section section--alt" id="place">
+    <div class="wrap">
+      <p class="eyebrow">PLACE</p>
+      <h2 class="h2">会場位置</h2>
+      <p class="lead wrap--narrow" style="margin-inline:0">
+        会場は佐世保競輪場です。中心市街地および佐世保港に近接しています。
+      </p>
+
+      <!-- **概略図であって地図ではない。** 正式住所が決まるまで、距離も所要時間も書かない。
+           書いた瞬間に、確かめていない数字が独り歩きする。 -->
+      <figure class="plan-map">
+        <svg viewBox="0 0 900 460" role="img" aria-labelledby="mapTitle mapDesc">
+          <title id="mapTitle">佐世保市内のおおよその位置関係</title>
+          <desc id="mapDesc">佐世保駅と中心市街地の北東側に会場（佐世保競輪場）があり、西側に佐世保港が広がる位置関係を示した概略図です。</desc>
+
+          <rect x="0" y="0" width="900" height="460" fill="#0F1A22"/>
+
+          <!-- 海 -->
+          <path d="M0,150 C120,170 200,250 180,340 C170,400 120,440 0,455 Z" fill="#16303C" opacity=".9"/>
+          <text x="52" y="330" class="map-sea">佐世保港</text>
+
+          <!-- 陸の起伏（雰囲気づけ。地形ではない） -->
+          <path d="M620,70 C700,40 820,60 900,30 L900,0 L560,0 Z" fill="#14222B" opacity=".8"/>
+
+          <!-- 主要な軸（道路・鉄道のイメージ） -->
+          <path d="M210,392 L470,300 L690,196" class="map-road"/>
+          <path d="M470,300 L520,120" class="map-road map-road--thin"/>
+          <text x="330" y="372" class="map-label">市街地から会場へ</text>
+
+          <!-- 佐世保駅 -->
+          <circle cx="210" cy="392" r="9" class="map-dot"/>
+          <text x="230" y="398" class="map-place">JR佐世保駅</text>
+
+          <!-- 中心市街地 -->
+          <circle cx="470" cy="300" r="9" class="map-dot"/>
+          <text x="490" y="306" class="map-place">中心市街地（アーケード）</text>
+
+          <!-- 会場 -->
+          <g>
+            <circle cx="690" cy="196" r="30" class="map-halo"/>
+            <circle cx="690" cy="196" r="13" class="map-venue"/>
+            <text x="690" y="152" class="map-venue-label" text-anchor="middle">会場</text>
+            <text x="690" y="252" class="map-place" text-anchor="middle">佐世保競輪場</text>
+          </g>
+
+          <!-- 方位 -->
+          <g transform="translate(828,66)">
+            <path d="M0,-26 L8,8 L0,2 L-8,8 Z" class="map-north"/>
+            <text x="0" y="28" class="map-label" text-anchor="middle">N</text>
+          </g>
+        </svg>
+        <figcaption class="plan-note" id="planMapNote"></figcaption>
+      </figure>
+
+      <p class="plan-note">
+        公共交通機関・駐車場・シャトルバスの詳細は<a href="access.html">アクセス</a>をご覧ください。
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap wrap--narrow" style="margin-inline:0">
+      <h2 class="h2">本資料について</h2>
+      <p class="lead" id="planSource"></p>
+      <p class="lead">
+        本資料は企画段階の事業計画であり、記載の数値は現状検討中です。開催日および主催体制の確定にあわせて更新します。
+      </p>
+      <p class="plan-note">最終更新 <span id="planUpdated">—</span></p>
+      <div class="btn-row" style="margin-top:1.6em">
+        <a class="btn btn--support" href="support.html">協賛・支援について</a>
+        <a class="btn btn--secondary" href="about.html">イベントについて</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft__top">
+      <div class="ft__brand">
+        <p class="logo__en">ないとマーケット（仮称）</p>
+        <p class="ft__tag">佐世保の夜に、市（いち）を。</p>
+        <div class="ft__info">
+          <p><b class="js-date">2027年3月</b><span class="js-provisional" hidden>（調整中）</span></p>
+          <p class="js-venue">佐世保競輪場</p>
+          <p><span class="js-open">15:00 - 20:30</span> ／ <span class="js-admission">入場無料</span></p>
+          <p>主催：<span class="js-organizer">調整中</span></p>
+          <p>お問い合わせ：<span class="js-contact">調整中</span></p>
+        </div>
+      </div>
+      <div class="ft__navs">
+        <div>
+          <p class="ft__ttl">Event</p>
+          <ul class="ft__list">
+            <li><a href="about.html">イベントについて</a></li>
+            <li><a href="plan.html">規模と試算</a></li>
+            <li><a href="market.html">出店者</a></li>
+            <li><a href="fireworks.html">花火</a></li>
+            <li><a href="access.html">アクセス</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="ft__ttl">Join</p>
+          <ul class="ft__list">
+            <li><a href="ticket.html">有料観覧席</a></li>
+            <li><a href="support.html">協賛・支援</a></li>
+            <li><a href="partners.html">協賛企業・団体</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="ft__ttl">Info</p>
+          <ul class="ft__list">
+            <li><a href="news.html">お知らせ</a></li>
+            <li><a href="faq.html">よくある質問</a></li>
+            <li><a href="index.html#meter">応援する</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="ft__bottom">
+      <div class="ft__legal" id="legalLinks"></div>
+      <small>&copy; <span class="js-year">2026</span> ないとマーケット（仮称）</small>
+    </div>
+    <p class="ft__note">
+      ※開催日、打ち上げ時刻、駐車場、出店者、協賛企業には未確定の情報が含まれます。決定次第、当サイトで更新します。<br>
+      ※掲載している写真は計画段階のイメージです。
+    </p>
+  </div>
+</footer>
+
+<div class="mcta">
+  <a class="btn btn--support" href="support.html">応援する</a>
+  <a class="btn btn--secondary" href="ticket.html">観覧席について</a><!-- 席の販売は、花火の打ち上げ場所が決まるまで開けない（仕様書5節） -->
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/plan.js"></script>
+</body>
+</html>
