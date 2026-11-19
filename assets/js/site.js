@@ -26,9 +26,13 @@
      「未定」と「偽の連絡先が出ている」は別物で、
      後者は届かない問い合わせを生む。
 
-     空のときも ★ が残っているときも「調整中」にする。
-     data.js を直し忘れても、印がそのまま出ることはない。 */
-  var TBD = "調整中";
+     空のときも ★ が残っているときも「未定」にする。
+     data.js を直し忘れても、印がそのまま出ることはない。
+
+     **「調整中」ではなく「未定」。** 「調整中」は作業の最中であることを
+     言っているだけで、読む側には何も決まっていないことが伝わらない。
+     決まっていないなら、決まっていないと書く。 */
+  var TBD = "未定";
   function pub(v) {
     var t = (v == null ? "" : String(v)).trim();
     return (!t || t.charAt(0) === "★") ? TBD : t;
@@ -128,7 +132,7 @@
        空いた箱が残って「壊れている」ように見える。**決まっていないことを
        そのまま出す。** 日が入れば、ここは素通りして数え始める。 */
     if (isNaN(target)) {
-      showMessage("開催日は調整中です");
+      showMessage("開催日は未定です");
       return;
     }
 
@@ -607,7 +611,7 @@
       html += '<ul class="names names--cols">' +
         p.names.map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("") + "</ul>";
     } else {
-      html += '<p class="names">' + esc(p.namesEmpty || "決定次第、掲載します。") + "</p>";
+      html += '<p class="names">' + esc(p.namesEmpty || "未定です。") + "</p>";
     }
     html += "</div>";
 

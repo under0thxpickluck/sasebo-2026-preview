@@ -51,18 +51,12 @@
 
 <main id="main">
 
-  <section class="section">
+  <!-- ───────── 結論 ───────── -->
+  <section class="section" id="lead">
     <div class="wrap">
       <p class="eyebrow">PLAN &amp; ESTIMATE</p>
-      <h1 class="h1">事業の規模と試算</h1>
-      <p class="lead wrap--narrow" style="margin-inline:0">
-        来場規模・支出・収入・運営体制についての事業計画です。本計画は企画段階のものであり、記載の数値は現状検討中です。
-      </p>
+      <h1 class="h1">花火は落とさない。<br>残りで、見せ場をつくる。</h1>
 
-      <!-- **ここを目立たせる。** 仮説を実績と読み違えられるのがいちばん困る。
-           画面の上のほう、表より前に置く（下に置くと読まれない）。 -->
-      <!-- このページは案内（ナビ・フッター）から外してある。
-           協賛と出店の検討者に URL を渡して読んでもらう前提。 -->
       <p class="plan-note" style="margin-top:1.2em">
         このページは、協賛・出店をご検討の方にお渡ししているものです。
         <a href="index.html">トップへ戻る</a>
@@ -70,387 +64,291 @@
       <p class="plan-status" id="planStatus"></p>
       <p class="plan-caution" id="planCaution" role="note"></p>
 
-      <!-- **ラベルの読み方を先に置く。** 色だけで分けると、白黒で印刷した
-           とき・読み上げたときに、目標と実績の区別が消える。 -->
-      <p class="plan-legend">
-        <span class="plan-tag plan-tag--fact">実績</span> 過去の実施報告に基づく数値
-        <span class="plan-tag plan-tag--draft">仮置</span> 見積前の予算枠
-        <span class="plan-tag plan-tag--goal">目標</span> 営業上の目標値
-        <span class="plan-tag plan-tag--none">検討中</span> 算定を進めている項目
+      <figure class="plan-figure">
+        <img src="assets/img/photo/fireworks.jpg" alt="佐世保競輪場のバンク越しに上がる花火のイメージ"
+             width="1600" height="1100" loading="eager">
+        <figcaption>写真はイメージです。花火は打ち上げ場所を選定中です。</figcaption>
+      </figure>
+
+      <p class="legend">
+        <span class="plan-tag plan-tag--draft">仮置</span> 見積前の枠
+        <span class="plan-tag plan-tag--none">未算出</span> 確認が済んでいない
       </p>
     </div>
   </section>
 
-  <!-- ───────── 過去の実績 ───────── -->
-  <section class="section" id="history">
+  <!-- ───────── 予算 ───────── -->
+  <section class="section section--alt" id="budget">
     <div class="wrap">
-      <p class="eyebrow">HISTORY</p>
-      <h2 class="h2">過去の実施実績</h2>
+      <p class="eyebrow">BUDGET</p>
+      <h2 class="h2">総予算 500万円</h2>
       <p class="lead wrap--narrow" style="margin-inline:0">
-        同じ運営体制で実施した過去イベントの来場実績です。
+        花火に <b>300万円</b>。残り <b>168万円</b> で演出と運営をまかない、
+        <b>32万円</b> を予備に残します。
       </p>
-      <div class="table-wrap">
-        <table class="plan-table" id="planHistory">
-          <thead><tr><th scope="col">回</th><th scope="col">来場</th><th scope="col">内訳</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      <p class="plan-note" id="planHistoryNote"></p>
-    </div>
-  </section>
 
-  <!-- ───────── 規模 ───────── -->
-  <section class="section section--alt" id="scale">
-    <div class="wrap">
-      <p class="eyebrow">SCALE</p>
-      <h2 class="h2">想定規模</h2>
-      <p class="lead wrap--narrow" style="margin-inline:0">
-        来場者数は下振れ・基準・上振れの3ケースで想定しています。基準ケースは延べ1,500人です。
-      </p>
-      <div class="table-wrap">
-        <table class="plan-table" id="planScale">
-          <thead><tr><th scope="col">項目</th><th scope="col">下振れ</th><th scope="col">基準</th><th scope="col">上振れ</th><th scope="col">考え方</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      <p class="plan-note" id="planScaleNote"></p>
-    </div>
-  </section>
+      <figure>
+        <div class="scroll">
+          <svg viewBox="0 0 900 150" role="img"
+               aria-label="総予算500万円の内訳。花火300万円、その他168万円、予備費32万円。棒の長さは金額に比例。">
+            <rect class="pb pb--fire" x="20" y="40" width="516" height="46" rx="4"></rect>
+            <rect class="pb pb--other" x="536" y="40" width="289" height="46" rx="4"></rect>
+            <rect class="pb pb--spare" x="825" y="40" width="55" height="46" rx="4"></rect>
+            <text class="pb-t" x="34" y="70">花火 300万円</text>
+            <text class="pb-t" x="550" y="70">その他 168万円</text>
+            <text class="pb-s" x="20" y="112">60%</text>
+            <text class="pb-s" x="536" y="112">33.6%</text>
+            <text class="pb-s" x="790" y="112">予備 32万円</text>
+          </svg>
+        </div>
+      </figure>
 
-  <!-- ───────── 支出 ───────── -->
-  <section class="section" id="budget">
-    <div class="wrap">
-      <p class="eyebrow">COST</p>
-      <h2 class="h2">支出計画</h2>
-      <p class="lead wrap--narrow" style="margin-inline:0">
-        支出予算は10費目で構成し、各費目に削減の可否を併記しています。
-      </p>
       <p class="plan-total">合計 <b id="planBudgetTotal">—</b></p>
       <div class="table-wrap">
         <table class="plan-table" id="planBudget">
-          <thead><tr><th scope="col">費目</th><th scope="col">予算</th><th scope="col">削減可否</th><th scope="col">備考</th></tr></thead>
+          <thead><tr><th scope="col">費目</th><th scope="col">予算</th><th scope="col">削れるか</th><th scope="col">備考</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
-      <p class="plan-note" id="planBudgetNote"></p>
+      <p class="plan-rule" id="planBudgetNote"></p>
 
-      <!-- **この表に入っていない費目がある。** 入っていないことを
-           書かないと、375万円が全部だと読まれる。 -->
-      <h3 class="h3" style="margin-top:2.4em">別途見積とする費目</h3>
-      <div class="table-wrap">
-        <table class="plan-table" id="planBudgetMissing">
-          <thead><tr><th scope="col">費目</th><th scope="col">状態</th><th scope="col">備考</th></tr></thead>
-          <tbody></tbody>
-        </table>
+      <div class="nums" style="margin-top:1.6rem">
+        <div class="num num--hot"><b>300<span class="unit">万円</span></b><span>花火（削らない）</span></div>
+        <div class="num"><b>65<span class="unit">万円</span></b><span>演出3つの合計</span></div>
+        <div class="num"><b>52<span class="unit">万円</span></b><span>安全に関わる費目</span></div>
+        <div class="num"><b>32<span class="unit">万円</span></b><span>予備費（手を付けない）</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ───────── 収入 ───────── -->
-  <section class="section section--alt" id="income">
+  <!-- ───────── 演出 ───────── -->
+  <section class="section" id="shows">
     <div class="wrap">
-      <p class="eyebrow">INCOME</p>
-      <h2 class="h2">収入計画（協賛を除く）</h2>
+      <p class="eyebrow">SHOW</p>
+      <h2 class="h2">別々に金をかけず、重ねる</h2>
       <p class="lead wrap--narrow" style="margin-inline:0">
-        出店料は売上の15%とし、開催後に精算します。開催前の収入はチケット類です。
-      </p>
-      <p class="plan-total">協賛を除く収入 <b id="planIncomeTotal">—</b></p>
-      <div class="table-wrap">
-        <table class="plan-table" id="planIncome">
-          <thead><tr><th scope="col">収入項目</th><th scope="col">数量・単価</th><th scope="col">見込み</th><th scope="col">入る時期</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      <p class="plan-note" id="planIncomeBase"></p>
-      <p class="plan-rule" id="planIncomeNote"></p>
-    </div>
-  </section>
-
-  <!-- ───────── 協賛 ───────── -->
-  <section class="section" id="sponsor">
-    <div class="wrap">
-      <p class="eyebrow">SPONSOR</p>
-      <h2 class="h2">協賛計画（営業目標）</h2>
-
-      <!-- **提案価格であって、入金実績ではない。** ここを混ぜると、
-           集まっていないお金を集まったことにしてしまう。 -->
-      <p class="plan-caution" id="planSponsorStatus" role="note"></p>
-
-      <p class="plan-total">目標 <b id="planSponsorTotal">—</b></p>
-      <div class="table-wrap">
-        <table class="plan-table" id="planSponsorMenu">
-          <thead><tr><th scope="col">区分</th><th scope="col">価格</th><th scope="col">目標社数</th><th scope="col">計</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      <p class="plan-note" id="planSponsorNote"></p>
-    </div>
-  </section>
-
-  <!-- ───────── 損益 ───────── -->
-  <section class="section" id="scenario">
-    <div class="wrap">
-      <p class="eyebrow">SCENARIO</p>
-      <h2 class="h2">収支シナリオ</h2>
-      <p class="lead wrap--narrow" style="margin-inline:0">
-        来場3ケース別の収支です。支出はいずれのケースも375万円で算定しています。
-      </p>
-      <div class="table-wrap">
-        <table class="plan-table" id="planScenario">
-          <thead><tr>
-            <th scope="col">ケース</th><th scope="col">来場</th><th scope="col">チケット</th>
-            <th scope="col">出店料</th><th scope="col">協賛を除く収入</th><th scope="col">協賛</th>
-            <th scope="col">差引</th><th scope="col">判断</th>
-          </tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      <p class="plan-rule" id="planBreakeven"></p>
-      <p class="plan-note" id="planScenarioNote"></p>
-
-      <h3 class="h3" style="margin-top:2.4em">協賛額別の収支（基準ケース）</h3>
-      <div class="table-wrap">
-        <table class="plan-table" id="planSponsorLanding">
-          <thead><tr><th scope="col">協賛額</th><th scope="col">着地</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ───────── GO / NO-GO ───────── -->
-  <section class="section" id="gonogo">
-    <div class="wrap">
-      <p class="eyebrow">GO / NO-GO</p>
-      <h2 class="h2">開催可否の判断基準</h2>
-      <p class="lead wrap--narrow" style="margin-inline:0">
-        開催日から逆算した各時点で、確認事項と判断基準を定めています。
-      </p>
-      <div class="table-wrap">
-        <table class="plan-table" id="planGonogo">
-          <thead><tr><th scope="col">時期</th><th scope="col">確かめること</th><th scope="col">判断基準</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      <p class="plan-rule" id="planGonogoNote"></p>
-    </div>
-  </section>
-
-  <!-- ───────── 分岐 ───────── -->
-  <section class="section section--alt" id="branch">
-    <div class="wrap">
-      <p class="eyebrow">BRANCH</p>
-      <h2 class="h2">実施形態</h2>
-      <p class="lead wrap--narrow" style="margin-inline:0">
-        花火の実施可否に応じて、3つの実施形態を想定しています。
-      </p>
-      <div class="table-wrap">
-        <table class="plan-table" id="planBranch">
-          <thead><tr><th scope="col">案</th><th scope="col">条件</th><th scope="col">備考</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ───────── 導線 ───────── -->
-  <section class="section" id="flow">
-    <div class="wrap">
-      <p class="eyebrow">FLOW</p>
-      <h2 class="h2">来場者動線</h2>
-      <p class="lead wrap--narrow" style="margin-inline:0">
-        入場から退場までを5つの局面に分け、各局面の動線と留意点を整理しています。
+        ライトアップとシャボン玉を<b>別のコンテンツにしません。</b>
+        点灯した会場にシャボン玉を飛ばせば、照明がそのまま光源になります。
+        費用効率がよく、映像も撮りやすくなります。
       </p>
 
-      <!-- **図であって、会場図ではない。** 配置が決まる前に縮尺のある図を出すと、
-           出店の位置の約束として読まれてしまう。順番と溜まる場所だけを描く。 -->
-      <figure class="plan-flowmap">
-        <svg viewBox="0 0 980 300" role="img" aria-labelledby="flowTitle flowDesc">
-          <title id="flowTitle">入場から退場までの順路</title>
-          <desc id="flowDesc">正門から入場し、マーケットの通路を周回、観覧エリアへ移動して花火を観覧したのち、複数の出口へ分散して退場するまでの流れを示した概念図です。</desc>
+      <div class="show-grid" id="planShows"></div>
 
-          <rect x="0" y="0" width="980" height="300" fill="#0F1A22"/>
-
-          <!-- 道筋 -->
-          <path d="M96,150 L300,150 L520,150 L740,150" class="fm-path"/>
-          <path d="M740,150 L884,96" class="fm-path fm-path--split"/>
-          <path d="M740,150 L884,150" class="fm-path fm-path--split"/>
-          <path d="M740,150 L884,204" class="fm-path fm-path--split"/>
-
-          <!-- 節 -->
-          <g class="fm-node">
-            <circle cx="96" cy="150" r="26" class="fm-dot"/>
-            <text x="96" y="157" class="fm-no" text-anchor="middle">01</text>
-            <text x="96" y="212" class="fm-label" text-anchor="middle">入場</text>
-          </g>
-          <g class="fm-node">
-            <circle cx="300" cy="150" r="26" class="fm-dot"/>
-            <text x="300" y="157" class="fm-no" text-anchor="middle">02</text>
-            <text x="300" y="212" class="fm-label" text-anchor="middle">マーケット</text>
-          </g>
-          <g class="fm-node">
-            <circle cx="520" cy="150" r="30" class="fm-dot fm-dot--peak"/>
-            <text x="520" y="158" class="fm-no" text-anchor="middle">03</text>
-            <text x="520" y="216" class="fm-label" text-anchor="middle">観覧エリアへ</text>
-            <text x="520" y="92" class="fm-peak" text-anchor="middle">滞留が最大</text>
-          </g>
-          <g class="fm-node">
-            <circle cx="740" cy="150" r="26" class="fm-dot"/>
-            <text x="740" y="157" class="fm-no" text-anchor="middle">04</text>
-            <text x="740" y="212" class="fm-label" text-anchor="middle">花火</text>
-          </g>
-
-          <!-- 分散退場 -->
-          <text x="884" y="101" class="fm-exit">出口A</text>
-          <text x="884" y="155" class="fm-exit">出口B</text>
-          <text x="884" y="209" class="fm-exit">駐車場</text>
-          <text x="884" y="252" class="fm-label" text-anchor="middle">時間をずらして退場</text>
-        </svg>
+      <figure class="plan-figure plan-figure--pair">
+        <div>
+          <img src="assets/img/photo/light.jpg" alt="行灯と裸電球で照らされた通路のイメージ"
+               width="1400" height="933" loading="lazy">
+          <figcaption>ライトアップ（手元の素材）。この光をシャボン玉の光源に兼ねます。</figcaption>
+        </div>
+        <div>
+          <img src="assets/img/photo/bubble-show.jpg" alt="照明を受けて夜空に広がるシャボン玉と演者"
+               width="1671" height="941" loading="lazy">
+          <figcaption>シャボン玉演出の参考写真。当イベントの開催実績ではありません。10〜15分のショーとして、音楽と合わせる案です。</figcaption>
+        </div>
       </figure>
-
-      <div class="table-wrap">
-        <table class="plan-table" id="planFlow">
-          <thead><tr><th scope="col">局面</th><th scope="col">動線</th><th scope="col">留意点</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      <p class="plan-rule" id="planFlowRule"></p>
     </div>
   </section>
 
-  <!-- ───────── 時間割 ───────── -->
+  <!-- ───────── 当日 ───────── -->
   <section class="section section--alt" id="timetable">
     <div class="wrap">
       <p class="eyebrow">TIMETABLE</p>
-      <h2 class="h2">当日の進行（案）</h2>
+      <h2 class="h2">当日の流れ（案）</h2>
       <p class="lead wrap--narrow" style="margin-inline:0">
-        来場者向けの進行と、各時間帯の運営対応です。
+        <b>シアターとシャボン玉は、時間も場所も分けます。</b>
+        シャボン玉に当てた光が、映像に干渉するためです。
       </p>
+
+      <figure>
+        <div class="scroll">
+          <svg viewBox="0 0 900 190" role="img"
+               aria-label="昼のマルシェ、ライトアップ点灯、シャボン玉、ミニシアター、花火の順に進む一日の流れ図。">
+            <path class="tl-line" d="M40,96 L860,96"></path>
+            <g class="tl">
+              <circle cx="90" cy="96" r="13"/><text x="90" y="62" text-anchor="middle">11:00</text>
+              <text x="90" y="134" text-anchor="middle" class="tl-s">昼のマルシェ</text>
+            </g>
+            <g class="tl">
+              <circle cx="285" cy="96" r="13"/><text x="285" y="62" text-anchor="middle">日没前後</text>
+              <text x="285" y="134" text-anchor="middle" class="tl-s">ライトアップ</text>
+            </g>
+            <g class="tl">
+              <circle cx="470" cy="96" r="15" class="tl-hot"/><text x="470" y="62" text-anchor="middle">日没後</text>
+              <text x="470" y="134" text-anchor="middle" class="tl-s">シャボン玉 15分</text>
+            </g>
+            <g class="tl">
+              <circle cx="655" cy="96" r="13"/><text x="655" y="62" text-anchor="middle">18:30</text>
+              <text x="655" y="134" text-anchor="middle" class="tl-s">ミニシアター</text>
+            </g>
+            <g class="tl">
+              <circle cx="840" cy="96" r="17" class="tl-fire"/><text x="840" y="56" text-anchor="middle">20:00</text>
+              <text x="840" y="138" text-anchor="middle" class="tl-s">花火</text>
+            </g>
+            <text x="470" y="176" text-anchor="middle" class="tl-note">シャボン玉とシアターは、時間と場所を分ける</text>
+          </svg>
+        </div>
+      </figure>
+
       <div class="table-wrap">
         <table class="plan-table plan-table--time" id="planTimetable">
-          <thead><tr><th scope="col">時刻</th><th scope="col">来場者</th><th scope="col">運営</th></tr></thead>
+          <thead><tr><th scope="col">時間</th><th scope="col">来場者</th><th scope="col">運営</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
       <p class="plan-note" id="planTimetableNote"></p>
+
+      <figure class="plan-figure plan-figure--pair" style="margin-top:2rem">
+        <div>
+          <img src="assets/img/photo/market.jpg" alt="屋台と行灯が並ぶマルシェのイメージ"
+               width="1400" height="933" loading="lazy">
+          <figcaption>昼のマルシェ（手元の素材）。11:00〜16:30。</figcaption>
+        </div>
+        <div>
+          <img src="assets/img/photo/mini-theater.jpg" alt="屋外のバルーンスクリーンを囲んで映像を見る人たちのイメージ"
+               width="1672" height="941" loading="lazy">
+          <figcaption>ミニバルーンシアターのイメージ。100〜150インチ、20〜50人が入れ替わる規模を想定しています。</figcaption>
+        </div>
+      </figure>
     </div>
   </section>
 
-  <!-- ───────── 警備 ───────── -->
-  <section class="section" id="security">
+  <!-- ───────── 確認 ───────── -->
+  <section class="section" id="checks">
     <div class="wrap">
-      <p class="eyebrow">SECURITY</p>
-      <h2 class="h2">警備計画</h2>
-
-      <!-- **過去のイベントを参考にした見込みである**ことを、表より先に出す。
-           ここで確定した数字を出すと、所轄・警備会社と話す前に外へ約束したことになる。 -->
-      <p class="plan-caution" id="planSecurityBasis" role="note"></p>
-
-      <p class="lead wrap--narrow" style="margin-inline:0" id="planSecurityPeak"></p>
-
-      <h3 class="h3" style="margin-top:2.4em">重点警備箇所</h3>
-      <div class="table-wrap">
-        <table class="plan-table" id="planSecurity">
-          <thead><tr><th scope="col">場所</th><th scope="col">配置理由</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-
-      <h3 class="h3" style="margin-top:2.4em">関係機関との協議事項</h3>
-      <ul class="plan-todo" id="planSecurityTodo"></ul>
-    </div>
-  </section>
-
-  <!-- ───────── 追加企画 ───────── -->
-  <section class="section section--alt" id="marketing">
-    <div class="wrap">
-      <p class="eyebrow">EXTRA</p>
-      <h2 class="h2">追加企画</h2>
+      <p class="eyebrow">CHECK</p>
+      <h2 class="h2">先に潰すこと</h2>
       <p class="lead wrap--narrow" style="margin-inline:0">
-        既存の装飾費・広報費の範囲で実施する企画です。いずれも花火の実施可否にかかわらず実施できます。
+        <b>どれも、埋まるまで金額が動きます。</b>
+        業者に当たる前に、ここを確かめます。
       </p>
-      <div class="table-wrap">
-        <table class="plan-table" id="planMarketing">
-          <thead><tr><th scope="col">企画</th><th scope="col">時間</th><th scope="col">費用</th><th scope="col">中身</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      <p class="plan-note" id="planMarketingNote"></p>
+      <div class="check-list" id="planChecks"></div>
     </div>
   </section>
 
-  <!-- ───────── 場所 ───────── -->
-  <section class="section section--alt" id="place">
+  <!-- ───────── 会場 ───────── -->
+  <section class="section" id="venue">
     <div class="wrap">
-      <p class="eyebrow">PLACE</p>
-      <h2 class="h2">会場位置</h2>
+      <p class="eyebrow">VENUE</p>
+      <h2 class="h2">会場を、図で押さえる</h2>
       <p class="lead wrap--narrow" style="margin-inline:0">
-        会場は佐世保競輪場です。中心市街地および佐世保港に近接しています。
+        区画を決める前に、<b>いまある建物と駐車場を押さえます。</b>
+        この3枚は会場から受け取った図です。
       </p>
 
-      <!-- **概略図であって地図ではない。** 正式住所が決まるまで、距離も所要時間も書かない。
-           書いた瞬間に、確かめていない数字が独り歩きする。 -->
-      <figure class="plan-map">
-        <svg viewBox="0 0 900 460" role="img" aria-labelledby="mapTitle mapDesc">
-          <title id="mapTitle">佐世保市内のおおよその位置関係</title>
-          <desc id="mapDesc">佐世保駅と中心市街地の北東側に会場（佐世保競輪場）があり、西側に佐世保港が広がる位置関係を示した概略図です。</desc>
-
-          <rect x="0" y="0" width="900" height="460" fill="#0F1A22"/>
-
-          <!-- 海 -->
-          <path d="M0,150 C120,170 200,250 180,340 C170,400 120,440 0,455 Z" fill="#16303C" opacity=".9"/>
-          <text x="52" y="330" class="map-sea">佐世保港</text>
-
-          <!-- 陸の起伏（雰囲気づけ。地形ではない） -->
-          <path d="M620,70 C700,40 820,60 900,30 L900,0 L560,0 Z" fill="#14222B" opacity=".8"/>
-
-          <!-- 主要な軸（道路・鉄道のイメージ） -->
-          <path d="M210,392 L470,300 L690,196" class="map-road"/>
-          <path d="M470,300 L520,120" class="map-road map-road--thin"/>
-          <text x="330" y="372" class="map-label">市街地から会場へ</text>
-
-          <!-- 佐世保駅 -->
-          <circle cx="210" cy="392" r="9" class="map-dot"/>
-          <text x="230" y="398" class="map-place">JR佐世保駅</text>
-
-          <!-- 中心市街地 -->
-          <circle cx="470" cy="300" r="9" class="map-dot"/>
-          <text x="490" y="306" class="map-place">中心市街地（アーケード）</text>
-
-          <!-- 会場 -->
-          <g>
-            <circle cx="690" cy="196" r="30" class="map-halo"/>
-            <circle cx="690" cy="196" r="13" class="map-venue"/>
-            <text x="690" y="152" class="map-venue-label" text-anchor="middle">会場</text>
-            <text x="690" y="252" class="map-place" text-anchor="middle">佐世保競輪場</text>
-          </g>
-
-          <!-- 方位 -->
-          <g transform="translate(828,66)">
-            <path d="M0,-26 L8,8 L0,2 L-8,8 Z" class="map-north"/>
-            <text x="0" y="28" class="map-label" text-anchor="middle">N</text>
-          </g>
-        </svg>
-        <figcaption class="plan-note" id="planMapNote"></figcaption>
+      <figure class="plan-figure">
+        <img src="assets/img/venue/venue-aerial.webp"
+             alt="佐世保競輪場をまっすぐ上から見た図。中央にバンクと芝生、南側にメインスタンド、東側に駐車場が並ぶ"
+             width="1570" height="1001" loading="lazy">
+        <figcaption>会場の俯瞰。バンクの内側（芝生）と、南のメインスタンドが使える面です。</figcaption>
       </figure>
 
-      <p class="plan-note">
-        公共交通機関・駐車場・シャトルバスの詳細は<a href="access.html">アクセス</a>をご覧ください。
+      <h3 class="h3" style="margin-top:2.6em">駐車場は 676台</h3>
+      <p class="lead wrap--narrow" style="margin-inline:0">
+        仕様書では「利用可・台数は未定」でした。<b>図で台数が分かりました。</b>
       </p>
+
+      <figure class="plan-figure">
+        <img src="assets/img/venue/parking-map.webp"
+             alt="会場周辺の航空写真に、第1から第4の駐車場と臨時駐車場を色分けして示した図"
+             width="1536" height="1024" loading="lazy">
+        <figcaption>第1 130台／第2 260台／第3 86台／第4 50台／臨時 150台。</figcaption>
+      </figure>
+
+      <div class="table-wrap">
+        <table class="plan-table" id="planParking">
+          <thead><tr><th scope="col">駐車場</th><th scope="col">台数</th><th scope="col">備考</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="plan-total">合計 <b id="planParkingTotal">—</b></p>
+      <p class="plan-rule" id="planParkingNote"></p>
+
+      <h3 class="h3" style="margin-top:2.6em">メインスタンドの中</h3>
+
+      <figure class="plan-figure">
+        <img src="assets/img/venue/floor-map.webp"
+             alt="メインスタンド1階から3階までのフロアマップ。警備室・救護室・トイレ・授乳室・フードコートなどの位置が書かれている"
+             width="1536" height="1024" loading="lazy">
+        <figcaption>1F〜3F。トイレ・授乳室・救護室・警備室の位置が分かります。</figcaption>
+      </figure>
+
+      <div class="table-wrap">
+        <table class="plan-table" id="planFloors">
+          <thead><tr><th scope="col">階</th><th scope="col">あるもの</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="plan-rule" id="planFloorNote"></p>
+
+      <div class="strip strip--warn" style="margin-top:1.8rem">
+        <b>この3枚は会場から受け取った図です。</b>
+        サイトに載せたままにしてよいか、会場に確認を取ってください。
+        確認が取れるまでは、検索に出ない状態（noindex）で置いています。
+      </div>
     </div>
   </section>
 
+  <!-- ───────── 次 ───────── -->
+  <section class="section section--alt" id="next">
+    <div class="wrap">
+      <p class="eyebrow">NEXT</p>
+      <h2 class="h2">次は、会場の区画図</h2>
+      <p class="lead wrap--narrow" style="margin-inline:0" id="planNextStep"></p>
+
+      <figure>
+        <div class="scroll">
+          <svg viewBox="0 0 900 360" role="img"
+               aria-label="会場内の区画の配置案。飲食・牡蠣、シアター、シャボン玉、観覧エリア、花火の保安区域の位置関係を示した概略図。縮尺は無い。">
+            <rect x="0" y="0" width="900" height="360" fill="#0F1A22"/>
+            <path d="M60,300 Q450,210 840,300" class="bank"/>
+            <text x="450" y="336" class="svg-cap" text-anchor="middle">バンク（イメージ・縮尺なし）</text>
+
+            <rect class="zone" x="60" y="60" width="210" height="88" rx="8"/>
+            <text class="zone-t" x="165" y="98" text-anchor="middle">飲食・牡蠣</text>
+            <text class="zone-s" x="165" y="122" text-anchor="middle">11:00〜</text>
+
+            <rect class="zone" x="300" y="60" width="180" height="88" rx="8"/>
+            <text class="zone-t" x="390" y="98" text-anchor="middle">シアター</text>
+            <text class="zone-s" x="390" y="122" text-anchor="middle">18:30〜19:30</text>
+
+            <rect class="zone" x="510" y="60" width="180" height="88" rx="8"/>
+            <text class="zone-t" x="600" y="98" text-anchor="middle">シャボン玉</text>
+            <text class="zone-s" x="600" y="122" text-anchor="middle">日没後 15分</text>
+
+            <rect class="zone zone--kan" x="300" y="180" width="390" height="70" rx="8"/>
+            <text class="zone-t" x="495" y="212" text-anchor="middle">観覧エリア</text>
+            <text class="zone-s" x="495" y="234" text-anchor="middle">20:00 花火</text>
+
+            <rect class="zone zone--ho" x="720" y="60" width="150" height="190" rx="8"/>
+            <text class="zone-t" x="795" y="140" text-anchor="middle">花火</text>
+            <text class="zone-t" x="795" y="164" text-anchor="middle">保安区域</text>
+            <text class="zone-s" x="795" y="192" text-anchor="middle">場所を選定中</text>
+
+            <path class="arrow" d="M480,104 L506,104"/>
+            <path class="arrow" d="M390,152 L390,176"/>
+          </svg>
+        </div>
+        <figcaption>
+          <b>これは配置案であって、会場図ではありません。</b>
+          縮尺も方位もありません。出店位置の約束として読まないでください。
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ───────── 出どころ ───────── -->
   <section class="section">
     <div class="wrap wrap--narrow" style="margin-inline:0">
-      <h2 class="h2">本資料について</h2>
+      <h2 class="h2">この試算の出どころ</h2>
       <p class="lead" id="planSource"></p>
-      <p class="lead">
-        本資料は企画段階の事業計画であり、記載の数値は現状検討中です。開催日および主催体制の確定にあわせて更新します。
-      </p>
       <p class="plan-note">最終更新 <span id="planUpdated">—</span></p>
+      <p class="lead">
+        ここに書いたのは、いまの見込みです。見積が出れば入れ替えます。
+        数字の置き方がおかしいと思われたら、そこを指摘してください。直します。
+      </p>
       <div class="btn-row" style="margin-top:1.6em">
         <a class="btn btn--support" href="support.html">協賛・支援について</a>
-        <a class="btn btn--secondary" href="about.html">イベントについて</a>
+        <a class="btn btn--secondary" href="index.html">トップへ</a>
       </div>
     </div>
   </section>
@@ -464,11 +362,11 @@
         <p class="logo__en">ないとマーケット（仮称）</p>
         <p class="ft__tag">佐世保の夜に、市（いち）を。</p>
         <div class="ft__info">
-          <p><b class="js-date">2027年3月</b><span class="js-provisional" hidden>（調整中）</span></p>
+          <p><b class="js-date">2027年3月</b><span class="js-provisional" hidden>（未定）</span></p>
           <p class="js-venue">佐世保競輪場</p>
           <p><span class="js-open">15:00 - 20:30</span> ／ <span class="js-admission">入場無料</span></p>
-          <p>主催：<span class="js-organizer">調整中</span></p>
-          <p>お問い合わせ：<span class="js-contact">調整中</span></p>
+          <p>主催：<span class="js-organizer">未定</span></p>
+          <p>お問い合わせ：<span class="js-contact">未定</span></p>
         </div>
       </div>
       <div class="ft__navs">
@@ -504,8 +402,8 @@
       <small>&copy; <span class="js-year">2026</span> ないとマーケット（仮称）</small>
     </div>
     <p class="ft__note">
-      ※開催日、打ち上げ時刻、駐車場、出店者、協賛企業には未確定の情報が含まれます。決定次第、当サイトで更新します。<br>
-      ※掲載している写真は計画段階のイメージです。
+      ※「未定」と書かれた項目は、まだ決まっていません。<br>
+      ※掲載している写真はイメージです。
     </p>
   </div>
 </footer>
